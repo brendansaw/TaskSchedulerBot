@@ -1,3 +1,3 @@
 # TaskSchedulerBot
 
-Discord Bot for NWHACKS 2022
+Discord Bot for NWHacks 2022
