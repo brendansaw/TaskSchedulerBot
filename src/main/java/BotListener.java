@@ -18,6 +18,14 @@ public class BotListener extends ListenerAdapter
         {
             MessageChannel channel = event.getChannel();
             channel.sendMessage("Pong!").queue(); // Important to call .queue() on the RestAction returned by sendMessage(...)
+        } else if (content.equals("!bingchilling")) {
+            MessageChannel channel = event.getChannel();
+            channel.sendMessage("https://c.tenor.com/VKs-TWiBLmEAAAAM/john-cena.gif").queue();
+            channel.sendMessage("BING CHILLING \uD83E\uDD76 \uD83C\uDF66 BING CHILLING \uD83E\uDD76 " +
+                    "\uD83C\uDF66 BING CHILLING \uD83E\uDD76 \uD83C\uDF66 BING CHILLING \uD83E\uDD76 " +
+                    "\uD83C\uDF66 BING CHILLING \uD83E\uDD76 \uD83C\uDF66 BING CHILLING \uD83E\uDD76 " +
+                    "\uD83C\uDF66 BING CHILLING \uD83E\uDD76 \uD83C\uDF66 BING CHILLING \uD83E\uDD76 " +
+                    "\uD83C\uDF66 BING CHILLING \uD83E\uDD76 \uD83C\uDF66").queue();
         }
     }
 }
