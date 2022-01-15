@@ -143,6 +143,7 @@ Thumbs.db
 # Gradle Files #
 ################
 .gradle
+.gradle/
 .m2
 
 # Build output directies
