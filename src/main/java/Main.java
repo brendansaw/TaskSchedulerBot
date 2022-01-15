@@ -5,8 +5,11 @@ import net.dv8tion.jda.api.JDABuilder;
 public class Main {
     public static void main(String[] args) throws Exception
     {
-        String botToken = System.getenv("BOT_TOKEN");
-        JDA api = JDABuilder.createDefault(botToken).build();
+        String botToken = "";
+//        String botToken = System.getenv("BOT_TOKEN");
+//        System.out.println(botToken);
+
+        JDA api = JDABuilder.createDefault(botToken).addEventListeners(new BotListener()).build();
     }
 }
 
