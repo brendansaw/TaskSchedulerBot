@@ -1,4 +1,5 @@
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
@@ -115,6 +116,7 @@ public class EventScheduler extends ListenerAdapter {
         EventScheduler.hashKeyToTime.put(strKey, time);
 
         EventScheduler.key++;
-        System.out.println(contentArrList.get(2));
+        MessageChannel channel = event.getChannel();
+        channel.sendMessage("The message has been successfully been queued for " + time + ".").queue();
     }
 }
