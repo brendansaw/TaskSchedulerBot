@@ -16,6 +16,7 @@ public class Main {
                 .addEventListeners(new BotListener())
                 .addEventListeners(new EventScheduler())
                 .addEventListeners(new InfoListener())
+                .addEventListeners(new DeleteEvent())
                 .addEventListeners(new ListListener())
                 .build();
 

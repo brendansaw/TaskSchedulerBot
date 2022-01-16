@@ -118,5 +118,7 @@ public class EventScheduler extends ListenerAdapter {
         EventScheduler.key++;
         MessageChannel channel = event.getChannel();
         channel.sendMessage("The message has been successfully been queued for " + time + ".").queue();
+
+
     }
 }
