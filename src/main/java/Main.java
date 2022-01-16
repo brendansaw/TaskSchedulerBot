@@ -17,6 +17,7 @@ public class Main {
                 .addEventListeners(new EventScheduler())
                 .addEventListeners(new InfoListener())
                 .addEventListeners(new DeleteEvent())
+                .addEventListeners(new ListListener())
                 .build();
 
         Timer timer = new Timer();
