@@ -36,10 +36,16 @@ public class EventScheduler extends ListenerAdapter
         String content = message.getContentRaw();
 
 
-        String[] contentString = content.split(" ");
+        String[] contentString = content.split(" ",2);
+
+        ArrayList<String> contentArrList = new ArrayList<String>();
+        Collections.addAll(contentArrList,contentString);
 
 
-        if (contentString[0].equals("!schedule")) //check
+        System.out.println(map1);
+        System.out.println(contentArrList.size());
+
+        if (contentArrList.get(0).equals("!schedule")) //check
         {
             MessageChannel channel = event.getChannel();
             channel.sendMessage("Pong!").queue(); // Important to call .queue() on the RestAction returned by sendMessage(...)
@@ -52,7 +58,7 @@ public class EventScheduler extends ListenerAdapter
 
 
         //hashmap2
-        String time = contentString[1];
+        String time = contentArrList.get(1);
         ArrayList<String> arrKeys = new ArrayList<String>();
 
         if (map2.containsKey(time)) {
@@ -70,6 +76,6 @@ public class EventScheduler extends ListenerAdapter
 
         key++;
 
-        System.out.println("Here");
+
     }
 }
