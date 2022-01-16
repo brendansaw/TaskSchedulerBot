@@ -12,19 +12,14 @@ public class Main {
         Dotenv dotenv = Dotenv.load();
         String botToken = dotenv.get("BOT_TOKEN");
 
-
-
-
-        Timer timer = new Timer();
-        timer.schedule(new CheckTime(), 0, 30000);
-
         JDA api = JDABuilder.createDefault(botToken)
                 .addEventListeners(new BotListener())
                 .addEventListeners(new EventScheduler())
                 .addEventListeners(new InfoListener())
                 .build();
 
-
+        Timer timer = new Timer();
+        timer.schedule(new CheckTime(), 0, 30000);
 
     }
 }
