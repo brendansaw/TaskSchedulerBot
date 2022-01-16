@@ -1,9 +1,8 @@
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+
 import java.util.*;
 import java.util.HashMap;
 
@@ -25,9 +24,9 @@ public class EventScheduler extends ListenerAdapter {
 public class EventScheduler extends ListenerAdapter
 {
     private int key = 1;
-    HashMap<Integer, String> map1 = new HashMap<>();
-    HashMap<Integer, String> map2 = new HashMap<>();
-    HashMap<Integer, String> map3 = new HashMap<>();
+    HashMap<String, String> map1 = new HashMap<>();
+    HashMap<String, ArrayList<String>> map2 = new HashMap<>();
+    HashMap<String, String> map3 = new HashMap<>();
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event)
@@ -48,15 +47,28 @@ public class EventScheduler extends ListenerAdapter
             MessageChannel channel = event.getChannel();
 
         }
+        String strKey = String.valueOf(key);
+        map1.put(strKey, content);
 
-        map1.put(key, content);
-        key++;
 
         //hashmap2
-        String time = "02:00";
+        String time = ContentString[1];
+        ArrayList<String> arrKeys = new ArrayList<String>();
+
+        if (map2.containsKey(time)) {
+            map2.get(time).add(strKey);
+        } else {
+            arrKeys.add(strKey);
+            map2.put(time, arrKeys);
+        }
 
 
 
         //hashmap3
+
+
+
+
+        key++;
     }
 }
