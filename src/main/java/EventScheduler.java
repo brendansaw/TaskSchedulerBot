@@ -86,7 +86,6 @@ public class EventScheduler extends ListenerAdapter {
         String strKey = String.valueOf(key);
 
 
-
         //hashmap2
         String time = contentArrList.get(1);
 
