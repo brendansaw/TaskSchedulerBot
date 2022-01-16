@@ -1,6 +1,7 @@
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.entities.MessageChannel;
 
 
 public class Main {
@@ -9,7 +10,12 @@ public class Main {
         Dotenv dotenv = Dotenv.load();
         String botToken = dotenv.get("BOT_TOKEN");
 
-        JDA api = JDABuilder.createDefault(botToken).addEventListeners(new BotListener()).build();
+        JDA api = JDABuilder.createDefault(botToken)
+                .addEventListeners(new BotListener())
+                .addEventListeners(new InfoListener())
+                .build();
+
+
     }
 }
 
