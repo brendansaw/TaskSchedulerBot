@@ -16,6 +16,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation("net.dv8tion:JDA:5.0.0-alpha.4")
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.33'
+    implementation('io.github.cdimascio:dotenv-java:2.2.0')
     //implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
     //compile "org.slf4j:slf4j-simple:1.7.33"
     //compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.33'

@@ -1,3 +1,4 @@
+import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
@@ -5,9 +6,8 @@ import net.dv8tion.jda.api.JDABuilder;
 public class Main {
     public static void main(String[] args) throws Exception
     {
-        String botToken = "";
-//        String botToken = System.getenv("BOT_TOKEN");
-//        System.out.println(botToken);
+        Dotenv dotenv = Dotenv.load();
+        String botToken = dotenv.get("BOT_TOKEN");
 
         JDA api = JDABuilder.createDefault(botToken).addEventListeners(new BotListener()).build();
     }
