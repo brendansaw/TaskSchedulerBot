@@ -62,7 +62,7 @@ public class EventScheduler extends ListenerAdapter {
 
         String strKey = String.valueOf(key);
 
-        hashKeyToMessage.put(strKey, content);
+        hashKeyToMessage.put(strKey, contentArrList.get(2));
 
         //hashmap2
         String time = contentArrList.get(1);
@@ -79,6 +79,7 @@ public class EventScheduler extends ListenerAdapter {
         hashKeyToTime.put(strKey, time);
 
         key++;
+        System.out.println(hashKeyToMessage);
 
     }
 }
